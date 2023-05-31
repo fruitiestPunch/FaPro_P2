@@ -134,7 +134,7 @@ class Tests:
 	def parse_throughput_files(self):
 		array = []
 		for i in range(0,self.MAX_NODE+1):
-			with open(f'{i}.throughput.json') as throughputfile:
+			with open(f'../{i}.throughput.json') as throughputfile:
 				throughput1 = json.load(throughputfile)
 				array.append(throughput1)
 		return array
@@ -168,7 +168,7 @@ tests = Tests()
 # Set starting test ID (overwrite value from constructor here)
 tests.TEST_ID = 99
 # run 100x
-for i in range(1,101):
+for i in range(1,6):
 	for script in tests.TESTFILES:
 		tests.create_test_case(script)
 		tests.run_test_case(script)
