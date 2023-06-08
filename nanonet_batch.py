@@ -15,6 +15,7 @@ class Tests:
 		# Names of the script files and the JSON files
 		self.TESTFILES = ['Joint.topo.sh', 'Weights.topo.sh']
 		self.JSON_FILES = ['joint.json', 'weights.json']
+		self.DIRECTORY = "/home/fp/download/FaPro_P2/"
 		# ID of the first test.
 		# This number is used in the CSV file for identification and in the filename.
 		# It is incremented for every new test case.
@@ -34,7 +35,7 @@ class Tests:
 	# Read the JSON file and fill the self.CAPACITY matrix.
 	def read_json(self, test_name : str):
 		json_filename = self.JSON_FILES[self.TESTFILES.index(test_name)]
-		with open('../' + json_filename) as json_file:
+		with open(json_filename) as json_file:
 			data = json.load(json_file)
 		links = data['links']
 		for e in links:
@@ -107,7 +108,7 @@ class Tests:
 
 	# Ends the test, i.e. runs "cd .." and resets lock variable.
 	def end_of_test(self):
-		chdir("..")
+		chdir(DIRECTORY)
 		self.is_in_test = False
 
 	# Helper function that returns a map with the interface names of the form:
@@ -134,7 +135,7 @@ class Tests:
 	def parse_throughput_files(self):
 		array = []
 		for i in range(0,self.MAX_NODE+1):
-			with open(f'../{i}.throughput.json') as throughputfile:
+			with open(f'{i}.throughput.json') as throughputfile:
 				throughput1 = json.load(throughputfile)
 				array.append(throughput1)
 		return array
@@ -168,7 +169,7 @@ tests = Tests()
 # Set starting test ID (overwrite value from constructor here)
 tests.TEST_ID = 99
 # run 100x
-for i in range(1,6):
+for i in range(1,11):
 	for script in tests.TESTFILES:
 		tests.create_test_case(script)
 		tests.run_test_case(script)
