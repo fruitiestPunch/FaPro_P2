@@ -108,7 +108,7 @@ class Tests:
 
 	# Ends the test, i.e. runs "cd .." and resets lock variable.
 	def end_of_test(self):
-		chdir(DIRECTORY)
+		chdir("..")
 		self.is_in_test = False
 
 	# Helper function that returns a map with the interface names of the form:
@@ -175,6 +175,7 @@ for i in range(1,11):
 		tests.run_test_case(script)
 		tests.finish_test_case(script)
 
+		tests.end_of_test()
 		tests.read_json(script)
 
 		max = str(tests.get_results(script))
@@ -183,4 +184,3 @@ for i in range(1,11):
 		with open(OUTPUT_FILE, "a") as result_file:
 			print(tests.TEST_ID,';',script,';',max,file=result_file)
 
-		tests.end_of_test()
