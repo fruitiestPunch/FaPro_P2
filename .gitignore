@@ -1,0 +1,6 @@
+PDF files
+*.pdf
+files in the folders
+*/*log
+*/*.py
+*/*.sh

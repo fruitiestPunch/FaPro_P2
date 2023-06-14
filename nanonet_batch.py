@@ -7,7 +7,7 @@ from sys import stdout, stderr, exit
 from time import sleep
 
 # Name of the output CSV file
-OUTPUT_FILE = '../batch_result001.csv'
+OUTPUT_FILE = 'batch_result001.csv'
 
 class Tests:
 	def __init__(self):
