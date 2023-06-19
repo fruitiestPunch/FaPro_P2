@@ -13,8 +13,10 @@ class Tests:
 	def __init__(self):
 		# TODO (eventually): DEFINE PARAMETERS HERE!
 		# Names of the script files and the JSON files
-		self.TESTFILES = ['Joint.topo.sh', 'Weights.topo.sh']
-		self.JSON_FILES = ['joint.json', 'weights.json']
+		#self.TESTFILES = ['Joint.topo.sh', 'Weights.topo.sh', 'pouria.topo.sh']
+		#self.JSON_FILES = ['joint.json', 'weights.json', 'pouria.json']
+		self.TESTFILES = ['pouria.topo.sh']
+		self.JSON_FILES = ['pouria.json']
 		self.DIRECTORY = "/home/fp/download/FaPro_P2/"
 		# ID of the first test.
 		# This number is used in the CSV file for identification and in the filename.
