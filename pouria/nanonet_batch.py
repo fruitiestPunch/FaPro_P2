@@ -9,15 +9,26 @@ from time import sleep
 # Name of the output CSV file
 OUTPUT_FILE = 'batch_result001.csv'
 
+# ##################################################
+# ##################################################
+# custom variables
+
+all_tests = True
+num_of_tests = 2
+# ##################################################
+# ##################################################
+
 class Tests:
 	def __init__(self):
 		# TODO (eventually): DEFINE PARAMETERS HERE!
 		# Names of the script files and the JSON files
-		#self.TESTFILES = ['Joint.topo.sh', 'Weights.topo.sh', 'pouria.topo.sh']
-		#self.JSON_FILES = ['joint.json', 'weights.json', 'pouria.json']
-		self.TESTFILES = ['pouria.topo.sh']
-		self.JSON_FILES = ['pouria.json']
-		self.DIRECTORY = "/home/fp/download/FaPro_P2/"
+		if(all_tests):
+			self.TESTFILES = ['Joint.topo.sh', 'Weights.topo.sh', 'pouria.topo.sh']
+			self.JSON_FILES = ['joint.json', 'weights.json', 'pouria.json']
+		else:
+			self.TESTFILES = ['pouria.topo.sh']
+			self.JSON_FILES = ['pouria.json']
+		self.DIRECTORY = "./"
 		# ID of the first test.
 		# This number is used in the CSV file for identification and in the filename.
 		# It is incremented for every new test case.
