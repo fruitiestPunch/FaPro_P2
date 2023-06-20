@@ -166,9 +166,9 @@ class Tests:
 
 tests = Tests()
 # Set starting test ID (overwrite value from constructor here)
-tests.TEST_ID = 99
-# run 20x
-for i in range(1,21):
+tests.TEST_ID = 129
+# run 5x
+for i in range(1,6):
 	for script in tests.TESTFILES:
 		tests.create_test_case(script)
 		tests.run_test_case(script)
