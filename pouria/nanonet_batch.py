@@ -14,7 +14,7 @@ OUTPUT_FILE = 'batch_result001.csv'
 # custom variables
 
 all_tests = True
-num_of_tests = 2
+num_of_tests = 3
 # ##################################################
 # ##################################################
 
@@ -182,7 +182,7 @@ tests = Tests()
 # Set starting test ID (overwrite value from constructor here)
 tests.TEST_ID = 99
 # run 100x
-for i in range(1,11):
+for i in range(1,num_of_tests+1):
 	for script in tests.TESTFILES:
 		tests.create_test_case(script)
 		tests.run_test_case(script)
