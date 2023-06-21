@@ -38,7 +38,9 @@ To view the results as a box plot diagram, run the following command
 ```bash
 python3 gen_boxplot.py
 ```
-and open up **[batch_result001.pdf](batch_result001.pdf)**
+and open up **[batch_result001.pdf](batch_result001.pdf)**.
+
+The plot displays 3 different boxplots, where **0** corresponds to *Joint*, **1** corresponds to *Weights* and **2** corresponds to *pouria*.
 
 *Note: When looking at the .csv or .pdf, the results all seem to be identical. The cause of this might be the 2 minute timeout when running the script. It seems that my computer aborts the calculation when reaching the time limit. This might not happen for you, if your computer has sufficient processing power.*
 
