@@ -57,15 +57,11 @@ def box_plot_all_top(df_plot, x_label="Model\n", y_label="\nMax. Normalized Link
 		plt.ylim(0.8, y_lim_top)
 	for y_line in x_grid_lines:
 		y_line.set_color('white')
+	plt.xlim(1)
 	plt.xticks(rotation=0)
 	plt.savefig(file_name.replace(" ", ""), bbox_inches="tight", format='pdf')
 	plt.close()
 	print(file_name)
-	###plt.yticks([0,1],['Joint','Weights', 'pouria'])
-	plt.yticks([0,1],['Joint', 'pouria'])
-	plt.tight_layout()
-	plt.grid()
-	plt.show()
 	return
 
 # Read the CSV file and filter for a test set (e.g. only JOINT tests)
@@ -75,11 +71,10 @@ def read_csv_data(filename : str, filter_filename : str):
 		return list(map( lambda row: float(row[2]) , filter( lambda row: row[1].strip() == filter_filename, csvreader ) ))
 
 data_joint   = read_csv_data( CSV_FILENAME, "Joint.topo.sh")
-###data_weights = read_csv_data( CSV_FILENAME, "Weights.topo.sh")
+data_weights = read_csv_data( CSV_FILENAME, "Weights.topo.sh")
 data_pouria = read_csv_data( CSV_FILENAME, "pouria.topo.sh")
 
-###data_all = [data_joint, data_weights, data_pouria]
-data_all = [data_joint, data_pouria]
+data_all = [data_joint, data_weights, data_pouria]
 
 box_plot_all_top(data_all)
 
@@ -87,9 +82,9 @@ box_plot_all_top(data_all)
 print("JOINT Median: ", statistics.median(data_joint))
 print("JOINT Minimum: ", min(data_joint))
 print("JOINT Maximum: ", max(data_joint))
-###print("WEIGHTS Median: ", statistics.median(data_weights))
-###print("WEIGHTS Minimum: ", min(data_weights))
-###print("WEIGHTS Maximum: ", max(data_weights))
+print("WEIGHTS Median: ", statistics.median(data_weights))
+print("WEIGHTS Minimum: ", min(data_weights))
+print("WEIGHTS Maximum: ", max(data_weights))
 print("POURIA Median: ", statistics.median(data_pouria))
 print("POURIA Minimum: ", min(data_pouria))
 print("POURIA Maximum: ", max(data_pouria))
