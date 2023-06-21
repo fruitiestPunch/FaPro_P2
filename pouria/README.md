@@ -38,6 +38,10 @@ To view the results as a box plot diagram, run the following command
 ```bash
 python3 gen_boxplot.py
 ```
+and open up **[batch_result001.pdf](batch_result001.pdf)**
+
+*Note: When looking at the .csv or .pdf, the results all seem to be identical. The cause of this might be the 2 minute timeout when running the script. It seems that my computer aborts the calculation when reaching the time limit. This might not happen for you, if your computer has sufficient processing power.*
+
 ### Additional options/flags
 To reduce the overall computation time, flags are introduced.
 The code can be run with multiple options.
@@ -59,3 +63,6 @@ Please keep in mind that the overall computation time is
 num_of_tests * test_cases * 8 minutes
 ```
 So, if **num_of_tests = 5** and **all_tests = True**, the overall compututation time is 5x3x8 >= 120 minutes
+
+## Additional information
+The file **[network_origin.pdf](network_origin.pdf)** contains additional information about the network and the demands within that network.
