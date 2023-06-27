@@ -1,0 +1,257 @@
+% % -*- coding:utf-8 -*-
+\documentclass[aspectratio=169,10pt]{beamer}
+\nonstopmode
+
+\usepackage{appendixnumberbeamer}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{amsmath, amssymb}
+\usepackage{pifont} %fuer checkmarks
+\input{colors}
+
+% \usepackage{beamerthememetropolis}
+\usetheme[progressbar=frametitle,noslidenumbers]{metropolis}
+\newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
+
+
+\usepackage{xcolor}
+
+
+\title{Abschlusspr\"asentation Projekt 2}
+% \subtitle{Learning to Identify Similarities between Mathematical Expressions}
+\author{Pouria Araghchi 170468, Kai Lukas Ilmenau 225338, Naveed Niazi 214471}
+
+\institute{TU Dortmund - Fachprojekt zu "Routingalgorithmen"}
+\titlegraphic{\hfill\includegraphics[height=8mm]{tu-do-logo.pdf}}
+
+\date{\today}
+
+\begin{document}
+
+\maketitle
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Kai
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Kai}
+
+\begin{frame}{Die Topologie}
+\begin{columns}
+\begin{column}[t]{0.7\paperwidth}
+\includegraphics[width=\textwidth]{images/kai1.png}
+\end{column}
+\begin{column}[t]{0.3\paperwidth}
+\includegraphics[width=\textwidth]{images/kai_legend.png}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Inverse Capacity}
+\begin{columns}
+\begin{column}[t]{0.7\paperwidth}
+\includegraphics[width=\textwidth]{images/kai2.png}
+\end{column}
+\begin{column}[t]{0.3\paperwidth}
+\includegraphics[width=\textwidth]{images/kai_legend.png}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Closeness Centrality Werte}
+\begin{columns}
+\begin{column}[t]{0.7\paperwidth}
+\includegraphics[width=\textwidth]{images/kai3.png}
+\end{column}
+\begin{column}[t]{0.3\paperwidth}
+\includegraphics[width=\textwidth]{images/kai_legend.png}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Closeness Centrality With Inverse Capacity}
+\begin{columns}
+\begin{column}[t]{0.7\paperwidth}
+\includegraphics[width=\textwidth]{images/kai4.png}
+\end{column}
+\begin{column}[t]{0.3\paperwidth}
+\includegraphics[width=\textwidth]{images/kai_legend.png}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Mit Demands}
+\begin{columns}
+\begin{column}[t]{0.7\paperwidth}
+\includegraphics[width=\textwidth]{images/kai5.png}
+\Large
+Demands von 0 nach 4 (eine Capacity-Einheit) und von 4 nach 3 (acht Capacity-Einheiten)
+\end{column}
+\begin{column}[t]{0.3\paperwidth}
+\includegraphics[width=\textwidth]{images/kai_legend.png}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Boxplots}
+\includegraphics[width=\textwidth]{images/kai6.png}
+\end{frame}
+
+\begin{frame}{Ist meine Algorighmus besser?}
+\Large
+\begin{itemize}
+    \item in diesem speziellen Setting: Ja
+    \item "designed" Topologie\newline
+    $\rightarrow$ lange Suche nach guter Topologie f\"ur den Algorithmus
+    \item Siehe Projekt 1: $Inverse\_Capacity$ im Durchschnitt besser als meine Anpassung
+\end{itemize}
+\end{frame}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Naveed
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Naveed}
+\begin{frame}[fragile]{}
+\begin{center}
+    \includegraphics[width=\textwidth]{images/naveed_7.jpg}
+\end{center}
+\end{frame}
+\begin{frame}{Ergebnisse}
+\begin{center}
+    \includegraphics[width=\textwidth]{images/naveed_11.pdf}
+\end{center}
+\end{frame}
+\begin{frame}{Ergebnisse}
+\begin{center}
+    \includegraphics[width=\textwidth]{images/naveed_12.pdf}
+\end{center}
+\end{frame}
+\begin{frame}{Ergebnisse}
+\begin{center}
+    \includegraphics[width=\textwidth]{images/naveed_13.pdf}
+\end{center}
+\end{frame}
+\begin{frame}{Ergebnisse}
+\begin{center}
+    \includegraphics[width=\textwidth]{images/naveed_14.pdf}
+\end{center}
+\end{frame}
+\begin{frame}{Ergebnisse}
+\begin{center}
+    \includegraphics[width=\textwidth]{images/naveed_15.pdf}
+\end{center}
+\end{frame}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Pouria
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Pouria
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Sequential Combination aus InverseCapacity und DemandFirstWaypoints}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% erste Folie
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% zweite Folie
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% dritte Folie
+\begin{frame}{Zweiter Schritt: Motivation}
+\Large
+\begin{itemize}
+    \item wenig Rechenzeit f\"ur $inverse\_capacity$ und $demand\_first\_waypoints$
+    \item Kombi aus beidem genauer?
+    \item zus\"atzliche Rechenzeit gerechtfertigt?
+\end{itemize}
+\end{frame}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% neue Folien
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{MCF Synthetic Demands}
+\begin{columns}
+\begin{column}{0.5\paperwidth}
+\begin{center}
+\includegraphics[width=\textwidth]{images/pouria_all_algorithms_abilene.pdf}
+\end{center}
+\end{column}
+\hfill
+\begin{column}{0.5\paperwidth}
+\begin{center}
+\includegraphics[width=\textwidth]{images/pouria_colored_scatter_plot_results_all_algorithms.pdf}
+\end{center}
+\end{column}
+\end{columns}
+\end{frame}
+\begin{frame}{Scaled Real Demands}
+\begin{columns}
+\begin{column}{0.5\paperwidth}
+\begin{center}
+\includegraphics[width=\textwidth]{images/pouria_real_demands.pdf}
+\end{center}
+\end{column}
+\hfill
+\begin{column}{0.5\paperwidth}
+\begin{center}
+\includegraphics[width=\textwidth]{images/pouria_colored_scatter_plot_results_real_demands.pdf}
+\end{center}
+\end{column}
+\end{columns}
+\end{frame}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% neue Folien
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Zweiter Schritt: Fragen}
+\Large
+\begin{itemize}
+    \item Rechenaufwand von beiden gleich? $\rightarrow$ ja (vergleichbar)
+    \item warum ist $SQ_{CW}$ besser als $SQ_{WC}$?
+    \begin{itemize}
+    \Large
+        \item $inverse\_capacity$ bei \textcolor{green}{SeqComWayCap} versaut vorher optimierte Gewichte
+        \item $inverse\_capacity$ bei \textcolor{red}{SeqComCapWay} stellt n\"utzliche Gewichte
+        \item $demand\_first\_waypoints$ legt beste Route und verbessert weiter
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Reproduktion
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Ergebnisse Reproduktion von Gruppe 3}
+\begin{frame}{main: process killed itself}
+\begin{center}
+    %\includegraphics[width=\textwidth]{images/err5.png}
+\end{center}
+\end{frame}
+\begin{frame}{zixiang gu: Plottererror}
+\begin{center}
+    %\includegraphics[width=\textwidth]{images/err3.png}
+\end{center}
+\end{frame}
+\begin{frame}{zixiang gu: Plottererror nach Anpassung}
+\begin{center}
+    %\includegraphics[width=\textwidth]{images/err1.png}
+\end{center}
+\end{frame}
+\begin{frame}{daniel: Process killed itself}
+\begin{center}
+    %\includegraphics[width=\textwidth]{images/err2.png}
+\end{center}
+\end{frame}
+\begin{frame}{daniel: Dependency nicht in README}
+\begin{center}
+    %\includegraphics[width=\textwidth]{images/err4.png}
+\end{center}
+\end{frame}
+
+\begin{frame}[t,standout]
+\Large
+Fragen oder Anmerkungen?
+\end{frame}
+\end{document}
+
