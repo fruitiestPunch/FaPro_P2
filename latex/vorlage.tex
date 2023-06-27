@@ -155,67 +155,84 @@ Demands von 0 nach 4 (eine Capacity-Einheit) und von 4 nach 3 (acht Capacity-Ein
 \section{Sequential Combination aus InverseCapacity und DemandFirstWaypoints}
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % erste Folie
+\begin{frame}{Netzwerktopologie (Anlehnung an Abilene)\footnote{FaPro\_P2/pouria/network\_origin.pdf}}
+\includegraphics[width=\textwidth]{images/pouria1.png}
+\end{frame}
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % zweite Folie
+\begin{frame}{Anwendung von InverseCapacity\footnote{FaPro\_P2/pouria/network\_origin.pdf}}
+\includegraphics[width=\textwidth]{images/pouria2.png}
+\end{frame}
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % dritte Folie
-\begin{frame}{Zweiter Schritt: Motivation}
-\Large
-\begin{itemize}
-    \item wenig Rechenzeit f\"ur $inverse\_capacity$ und $demand\_first\_waypoints$
-    \item Kombi aus beidem genauer?
-    \item zus\"atzliche Rechenzeit gerechtfertigt?
-\end{itemize}
+\begin{frame}{Demandtabelle (vereinfacht)\footnote{FaPro\_P2/pouria/network\_origin.pdf}}
+\centering
+\begin{tabular}{c|c|c|c|c|c|c|c}
+$\downarrow$ von, nach $\rightarrow$ & HSTN  & KSCY & ATLA   & IPLS  & CHIN  & WASH  & NYCM\\
+\hline
+HSTN    & & 1 & 13 & 2 & 6 & 8 & 3\\
+\hline
+KSCY    & 1 & & 1 & 2 & 4 & 2 & 2\\
+\hline
+ATLA    & 28 & 1 & & 5 & 3 & 19 & 4\\
+\hline
+IPLS    & 7 & 2 & 4 & & 14 & 7 & 9\\
+\hline
+CHIN    & 165 & 17& 18 & 7 & & 11 & 12\\
+\hline
+WASH    & 13 & 5 & 13  & 5 & 17 & &20\\
+\hline
+NYCM    & 16 & 3 & 9 & 4 & 61 & 24 & 
+\end{tabular}
+\end{frame}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% vierte Folie
+\begin{frame}{Demandtabelle (st\"arker vereinfacht)\footnote{FaPro\_P2/pouria/network\_origin.pdf}}
+\centering
+\begin{tabular}{c|c|c|c|c|c|c|c}
+$\downarrow$ von, nach $\rightarrow$ & HSTN  & KSCY & ATLA   & IPLS  & CHIN  & WASH  & NYCM\\
+\hline
+HSTN    & & & & & & & \\
+\hline
+KSCY    & & & & & & & \\
+\hline
+ATLA    & & & & 5 & & & \\
+\hline
+IPLS    & & & & & & 7 & \\
+\hline
+CHIN    & & & & & & & \\
+\hline
+WASH    & & & & & & & \\
+\hline
+NYCM    & & & & & & & 
+\end{tabular}
 \end{frame}
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % neue Folien
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{MCF Synthetic Demands}
+\begin{frame}{Resultierender Boxplot}
+
 \begin{columns}
-\begin{column}{0.5\paperwidth}
-\begin{center}
-\includegraphics[width=\textwidth]{images/pouria_all_algorithms_abilene.pdf}
-\end{center}
+\begin{column}[t]{0.5\paperwidth}
+\includegraphics[width=\textwidth]{images/pouria3.pdf}
 \end{column}
-\hfill
-\begin{column}{0.5\paperwidth}
-\begin{center}
-\includegraphics[width=\textwidth]{images/pouria_colored_scatter_plot_results_all_algorithms.pdf}
-\end{center}
-\end{column}
-\end{columns}
-\end{frame}
-\begin{frame}{Scaled Real Demands}
-\begin{columns}
-\begin{column}{0.5\paperwidth}
-\begin{center}
+\begin{column}[t]{0.5\paperwidth}
 \includegraphics[width=\textwidth]{images/pouria_real_demands.pdf}
-\end{center}
-\end{column}
-\hfill
-\begin{column}{0.5\paperwidth}
-\begin{center}
-\includegraphics[width=\textwidth]{images/pouria_colored_scatter_plot_results_real_demands.pdf}
-\end{center}
 \end{column}
 \end{columns}
 \end{frame}
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % neue Folien
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{Zweiter Schritt: Fragen}
+\begin{frame}{Probleme}
 \Large
 \begin{itemize}
-    \item Rechenaufwand von beiden gleich? $\rightarrow$ ja (vergleichbar)
-    \item warum ist $SQ_{CW}$ besser als $SQ_{WC}$?
-    \begin{itemize}
-    \Large
-        \item $inverse\_capacity$ bei \textcolor{green}{SeqComWayCap} versaut vorher optimierte Gewichte
-        \item $inverse\_capacity$ bei \textcolor{red}{SeqComCapWay} stellt n\"utzliche Gewichte
-        \item $demand\_first\_waypoints$ legt beste Route und verbessert weiter
-    \end{itemize}
+    \item keine Boxen:\newline
+    $\rightarrow$ vermutlich zu schwacher Rechner (2 Minuten Timeout reicht nicht)
+    \item Sequential Combination besser:\newline
+    $\rightarrow$ meine Topolgie wurde vereinfacht, von Grund auf (\textbf{.json}$\rightarrow$\textbf{.topo.py}$\rightarrow$\textbf{.topo.sh})\newline
+    $\rightarrow$ Joint/Weights evtl nicht
 \end{itemize}
 \end{frame}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
